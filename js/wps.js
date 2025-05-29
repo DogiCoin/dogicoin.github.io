@@ -1,12 +1,29 @@
 
 // Получаем текущий URL
+//const currentUrl = new URL(window.location.href);
+
+// Получаем значение параметра 'Мой_Запрос'
+//const myRequest = currentUrl.searchParams.get('Мой_Запрос');
+
+// Задаем dkhash равным значению из GET-запроса или используем значение по умолчанию
+//const dkhash = currentUrl;// || 'pagedtrtgrfgrg_ded.fff'; // Замените 'default_value' на нужное вам значение по умолчанию
+
+// Получаем текущий URL
 const currentUrl = new URL(window.location.href);
 
 // Получаем значение параметра 'Мой_Запрос'
 const myRequest = currentUrl.searchParams.get('Мой_Запрос');
 
-// Задаем dkhash равным значению из GET-запроса или используем значение по умолчанию
-const dkhash = currentUrl;// || 'pagedtrtgrfgrg_ded.fff'; // Замените 'default_value' на нужное вам значение по умолчанию
+// Получаем последний сегмент пути
+const pathSegments = currentUrl.pathname.split('/'); // Разбиваем путь по '/'
+const lastSegment = pathSegments[pathSegments.length - 1]; // Получаем последний сегмент
+
+// Задаем dkhash равным значению из GET-запроса или используем последний сегмент пути
+const dkhash = myRequest || lastSegment; // Если myRequest пустой, используем lastSegment
+
+console.log(dkhash);
+
+
 
 console.log(dkhash);
 
