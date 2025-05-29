@@ -6,7 +6,7 @@ const currentUrl = new URL(window.location.href);
 const myRequest = currentUrl.searchParams.get('Мой_Запрос');
 
 // Задаем dkhash равным значению из GET-запроса или используем значение по умолчанию
-const dkhash = myRequest || 'pagedtrtgrfgrg_ded.fff'; // Замените 'default_value' на нужное вам значение по умолчанию
+const dkhash = currentUrl;// || 'pagedtrtgrfgrg_ded.fff'; // Замените 'default_value' на нужное вам значение по умолчанию
 
 console.log(dkhash);
 
